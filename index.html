@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <div class="container">
+        <ul class="cube init">
+            <li class="img1"><img src="img/img1.jpg" alt=""></li>
+            <li class="img2"><img src="img/img2.jpg" alt=""></li>
+            <li class="img3"><img src="img/img3.jpg" alt=""></li>
+            <li class="img4"><img src="img/img4.jpg" alt=""></li>
+            <li class="img5"><img src="img/img5.jpg" alt=""></li>
+            <li class="img6"><img src="img/img6.jpg" alt=""></li>
+        </ul>
+        <h2>点击下面图片旋转</h2>
+        <div class="btnsAre">
+            <input type="image" src="img/img1.jpg" id="show-image-1">
+            <input type="image" src="img/img2.jpg" id="show-image-2">
+            <input type="image" src="img/img3.jpg" id="show-image-3">
+            <input type="image" src="img/img4.jpg" id="show-image-4">
+            <input type="image" src="img/img5.jpg" id="show-image-5">
+            <input type="image" src="img/img6.jpg" id="show-image-6">
+        </div>
+
+    </div>
+
+    <script>
+        (function () {
+
+            var btns = document.getElementsByClassName('btnsAre')[0];
+            var cubebox = document.getElementsByClassName('cube')[0];
+            var currList = cubebox.classList;
+            var init = currList[1];
+            btns.addEventListener('click', function (e) {
+                console.log(e.target.id);
+                var current = e.target.id;
+                if(current.length>0){
+                    currList.replace(init,current);
+                    init = current;
+                }
+               
+                console.log(currList);
+
+
+
+            })
+
+
+        })()
+    </script>
+</body>
+
+</html>
